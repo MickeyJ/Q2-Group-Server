@@ -6,8 +6,9 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 
 var routes = require('./routes/index');
-var orders = require('./routes/orders');
 var users = require('./routes/users');
+var singles = require('./routes/singles');
+var orders = require('./routes/orders');
 
 var app = express();
 
@@ -19,8 +20,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/orders', orders);
 app.use('/users', users);
+app.use('/singles', singles);
+app.use('/orders', orders);
 
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
