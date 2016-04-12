@@ -1,18 +1,14 @@
 'use strict';
 const dt = require('./tables');
-const products = require('./mockProducts');
-
-
-console.log(products);
+const products = require('./../assets/mockProducts');
 
 const seedProducts = () =>{
+  console.log(products);
   dt.Products()
     .insert(products)
     .then(function(){
-
       process.exit(0);
     })
 };
-
 seedProducts();
 

@@ -40,7 +40,6 @@ if (app.get('env') === 'development') {
   });
 }
 
-
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', {
@@ -48,6 +47,5 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
 
 module.exports = app;
