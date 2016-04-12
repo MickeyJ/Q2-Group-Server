@@ -10,4 +10,13 @@ router.get('/', function(req, res, next) {
     });
 });
 
+router.get('/:id', function(req, res, next) {
+  dt.Products()
+    .where({product_id: req.params.id})
+    .first()
+    .then(function(product){
+      res.json(product);
+    });
+});
+
 module.exports = router;

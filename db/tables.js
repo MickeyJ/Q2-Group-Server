@@ -1,5 +1,5 @@
 var knex = require('./knex');
 
-exports.Users   = () => knex('users');
+exports.Users    = () => knex('users');
 exports.Products = () => knex('products');
-exports.Orders  = () => knex('orders');
+exports.Orders   = () => knex('orders');

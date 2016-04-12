@@ -6,6 +6,7 @@ router.get('/', function(req, res, next) {
   res.json({
     users: url.format({ protocol: req.protocol, host: req.get('host'), pathname: '/users' }),
     products: url.format({ protocol: req.protocol, host: req.get('host'), pathname: '/products' }),
+    products_by_id: url.format({ protocol: req.protocol, host: req.get('host'), pathname: '/products/12' }),
     orders: url.format({ protocol: req.protocol, host: req.get('host'), pathname: '/orders' }),
     order_by_id: url.format({ protocol: req.protocol, host: req.get('host'), pathname: '/orders/1' })
   })
