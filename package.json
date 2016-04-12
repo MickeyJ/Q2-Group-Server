@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "fresh-seed-local": "knex seed:run",
-    "more-seed-local": "node db/seedUsers.js"
+    "fresh-seed-users": "knex seed:run",
+    "more-seed-users": "node db/seedUsers.js",
+    "seed-products": "node db/seedProducts.js"
   },
   "dependencies": {
     "bcrypt": "^0.8.5",

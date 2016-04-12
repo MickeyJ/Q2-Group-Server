@@ -7,7 +7,7 @@ var cors = require('cors');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var singles = require('./routes/singles');
+var products = require('./routes/products');
 var orders = require('./routes/orders');
 
 var app = express();
@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/singles', singles);
+app.use('/products', products);
 app.use('/orders', orders);
 
 app.use(function(req, res, next) {

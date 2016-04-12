@@ -4,7 +4,6 @@ const Faker = require('faker');
 const dt = require('./tables');
 const bcrypt = require('bcrypt');
 
-
 const seedUsers = (num) =>{
   const e = new EventEmitter();
   let fakeUsers = [];

@@ -5,7 +5,7 @@ const url = require('url');
 router.get('/', function(req, res, next) {
   res.json({
     users: url.format({ protocol: req.protocol, host: req.get('host'), pathname: '/users' }),
-    singles: url.format({ protocol: req.protocol, host: req.get('host'), pathname: '/singles' }),
+    products: url.format({ protocol: req.protocol, host: req.get('host'), pathname: '/products' }),
     orders: url.format({ protocol: req.protocol, host: req.get('host'), pathname: '/orders' }),
     order_by_id: url.format({ protocol: req.protocol, host: req.get('host'), pathname: '/orders/1' })
   })

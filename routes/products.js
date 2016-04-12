@@ -3,7 +3,11 @@ var router = express.Router();
 const dt = require('../db/tables');
 
 router.get('/', function(req, res, next) {
-  res.json({singles: ['EMPTY']})
+  dt.Products()
+    .orderBy('product_id')
+    .then(function(products){
+      res.json(products);
+    });
 });
 
 module.exports = router;
