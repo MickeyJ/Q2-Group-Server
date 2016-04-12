@@ -5,8 +5,8 @@ module.exports = {
   Signup: (req, res, next) =>{
     let name  = req.body.name,
         email = req.body.email,
-        pass  = req.body.password;
-    if(!pass || !email || !name){
+        password  = req.body.password;
+    if(!password || !email || !name){
       res.json({error: 'No Input Provided'})
     } else {
       dt.Users()
@@ -22,8 +22,8 @@ module.exports = {
   },
   Login: (req, res, next) =>{
     let email = req.body.email,
-        pass  = req.body.password;
-    if(!pass || !email){
+        password  = req.body.password;
+    if(!password || !email){
       res.json('No Input Provided')
     } else {
       dt.Users()
@@ -32,7 +32,7 @@ module.exports = {
           if (!user){
             res.json({error: 'User Does Not Exists'})
           } else {
-            next()
+            res.json(user)
           }
         });
     }

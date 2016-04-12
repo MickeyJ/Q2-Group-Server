@@ -7,6 +7,7 @@ var cors = require('cors');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var admins = require('./routes/admins');
 var products = require('./routes/products');
 var orders = require('./routes/orders');
 
@@ -21,6 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/admins', admins);
 app.use('/products', products);
 app.use('/orders', orders);
 

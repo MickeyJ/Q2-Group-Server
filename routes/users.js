@@ -28,14 +28,6 @@ router.post('/signup', valid.Signup, (req, res, next) =>{
     .catch(err =>{ next(new Error(err)) });
 });
 
-router.post('/login', valid.Login, (req, res, next) =>{
-  dt.Users()
-    .where({email: req.body.email})
-    .first()
-    .then(user => {
-      res.json(user)
-    })
-    .catch(err =>{ next(new Error(err)) });
-});
+router.post('/login', valid.Login);
 
 module.exports = router;
