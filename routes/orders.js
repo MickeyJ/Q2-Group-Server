@@ -15,17 +15,27 @@ router.get('/:id', (req, res, next) =>{
 });
 
 router.post('/new', (req, res, next) =>{
-  const userID = req.body.user_id;
-  const productID = req.body.product_id;
-  console.log(userID);
   dt.Orders()
     .insert({
-      user_order_id: userID,
-      product_order_id: productID
+      user_order_id: req.body.user_id,
+      product_order_id: req.body.product_id
     })
     .then(response =>{
       res.json(response)
     });
+});
+
+router.delete('/:user/:product', (req, res, next) =>{
+  dt.Orders()
+    .where({
+      user_order_id: req.params.user,
+      product_order_id: req.params.product
+    })
+    .del()
+    .then(response =>{
+      res.json(response)
+    })
+    .catch(err =>{ next(new Error(err)) });
 });
 
 module.exports = router;
