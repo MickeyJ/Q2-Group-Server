@@ -52,5 +52,41 @@ module.exports = [
     info: "Try it on some pizza or something",
     image_url: "https://pixabay.com/static/uploads/photo/2015/02/14/18/10/pineapple-636562_960_720.jpg",
     price: 3
+  },
+  {
+    name: "strwi",
+    info: "It tastes like a snozzberry",
+    image_url: 'http://www.atbreak.com/wp-content/uploads/2011/05/117953_700b.jpg',
+    price: 5
+  },
+  {
+    name: "budda's Hand",
+    info: "half fruit half squid",
+    image_url: 'http://www.hrtwarming.com/wp-content/uploads/2014/05/1037.jpg',
+    price: 1
+  },
+  {
+    name: "evolved Radish",
+    info: "It's finally happend radishes are rising up against their oppressors. ",
+    image_url: 'http://cdn.kickvick.com/wp-content/uploads/2015/06/weird-fruits-and-vegetables-a-01.jpg',
+    price: 4
+  },
+  {
+    name: "pearudda",
+    info: "On bite and you will reach nirvana",
+    image_url: 'https://s-media-cache-ak0.pinimg.com/236x/57/f0/a2/57f0a2245cb02a9c6b894baba8c04dac.jpg',
+    price: 5
+  },
+  {
+    name: "cold strawberry",
+    info: "if you eat this the umba loopa's will have to take to the juicing room",
+    image_url: 'http://cdn.foodbeast.com.s3.amazonaws.com/content/wp-content/uploads/2012/03/Blue-450x362.jpg',
+    price: 5
+  },
+  {
+    name: "cherry",
+    info: "George Washingtons favorite fruit ha ha",
+    image_url: 'http://asweetlife.org/wp-content/uploads/2010/05/iStock_Cherries.jpg',
+    price: 5
   }
 ];
