@@ -43,7 +43,8 @@ router.post('/login', (req, res, next) =>{
           res.json({
             user_id: user.user_id,
             user_name: user.name,
-            user_email: user.email
+            user_email: user.email,
+            user_admin: user.admin
           })
         }
       });

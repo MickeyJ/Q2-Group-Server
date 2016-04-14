@@ -5,20 +5,28 @@ const bcrypt = require('bcrypt');
 const valid = require('../util/valid');
 const dt = require('../db/tables');
 
-router.get('/', function(req, res, next) {
-  dt.Admins()
-    .orderBy('admin_id')
+router.get('/', (req, res, next) =>{
+  dt.Users()
+    .where({admin: true})
     .then(function(admins){
       res.json(admins);
     });
 });
 
-router.post('/signup', (req, res, next) =>{
-  res.json('WIP')
-});
-
-router.post('/login', (req, res, next) =>{
-  res.json('WIP')
+router.post('/signup', valid.Signup, (req, res, next) =>{
+  let salt = bcrypt.genSaltSync(10);
+  let hash = bcrypt.hashSync(req.body.password, salt);
+  dt.Users()
+    .insert({
+      name: req.body.name,
+      email: req.body.email,
+      password: hash,
+      admin: true
+    }).returning('name')
+    .then((response) => {
+      res.json(response)
+    })
+    .catch(err =>{ next(new Error(err)) });
 });
 
 module.exports = router;

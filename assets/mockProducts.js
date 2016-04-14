@@ -2,91 +2,73 @@ module.exports = [
   {
     name: "Apple",
     info: "So fresh, so sweet, so crisp... Honey Crips",
-    image_url: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Macoun_Apple.jpg",
+    image_url: "http://www.kimmelorchard.org/img/icon_apple_gala.png",
     price: 3
   },
   {
     name: "Orange",
     info: "Our oranges are so great and totally awesome",
-    image_url: "https://upload.wikimedia.org/wikipedia/commons/c/c4/Orange-Fruit-Pieces.jpg",
+    image_url: "http://pngimg.com/upload/small/orange_PNG805.png",
     price: 2
   },
   {
     name: "Banana",
     info: "Big bananas, lil bananas. we got it all",
-    image_url: "https://pixabay.com/static/uploads/photo/2016/01/03/17/59/bananas-1119790_960_720.jpg",
+    image_url: "http://images.clipartpanda.com/banana-clipart-banana5.png",
     price: 2
   },
   {
     name: "Grape",
     info: "So good for snacking",
-    image_url: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Grapes_during_pigmentation_2.jpg",
+    image_url: "http://findicons.com/files/icons/791/delicious_fruits/256/grape.png",
     price: 4
   },
   {
     name: "Kiwi",
     info: "A challenge to eat but always worth it",
-    image_url: "https://upload.wikimedia.org/wikipedia/commons/d/d3/Kiwi_aka.jpg",
+    image_url: "http://www.iconarchive.com/download/i41504/fi3ur/fruitsalad/kiwi.ico",
     price: 3
   },
   {
-    name: "Avocado",
-    info: "Seriously avocados are the BOMB",
-    image_url: "https://pixabay.com/static/uploads/photo/2015/08/07/03/38/avocado-878958_960_720.jpg",
+    name: "Peach",
+    info: "Juicy and really nice on the whole",
+    image_url: "http://icons.iconarchive.com/icons/artbees/paradise-fruits/256/Peach-icon.png",
     price: 10
   },
   {
-    name: "Cantaloupe",
+    name: "Watermelon",
     info: "Great fun for the whole family",
-    image_url: "https://pixabay.com/static/uploads/photo/2014/07/08/14/17/muskmelons-387466_960_720.jpg",
+    image_url: "http://www.iconarchive.com/download/i41510/fi3ur/fruitsalad/watermelon.ico",
     price: 3
   },
   {
     name: "Lemon",
     info: "We forget about lemons. Let's remember together",
-    image_url: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Yellow_lemons.jpg",
+    image_url: "http://icons.iconarchive.com/icons/bingxueling/fruit-vegetables/256/lemon-icon.png",
     price: 1
   },
   {
     name: "Pineapple",
     info: "Try it on some pizza or something",
-    image_url: "https://pixabay.com/static/uploads/photo/2015/02/14/18/10/pineapple-636562_960_720.jpg",
+    image_url: "https://dtgxwmigmg3gc.cloudfront.net/files/54372114e1272f6e820006f4-icon-256x256.png",
     price: 3
   },
   {
-    name: "strwi",
-    info: "It tastes like a snozzberry",
-    image_url: 'http://www.atbreak.com/wp-content/uploads/2011/05/117953_700b.jpg',
+    name: "Mango",
+    info: "Your hands and feet are mangos, but you're going to be a genius anyways ~ Phish",
+    image_url: "http://www.fancyicons.com/download/?id=4528&t=png&s=256",
     price: 5
   },
   {
-    name: "budda's Hand",
-    info: "half fruit half squid",
-    image_url: 'http://www.hrtwarming.com/wp-content/uploads/2014/05/1037.jpg',
-    price: 1
-  },
-  {
-    name: "evolved Radish",
-    info: "It's finally happend radishes are rising up against their oppressors. ",
-    image_url: 'http://cdn.kickvick.com/wp-content/uploads/2015/06/weird-fruits-and-vegetables-a-01.jpg',
-    price: 4
-  },
-  {
-    name: "pearudda",
-    info: "On bite and you will reach nirvana",
-    image_url: 'https://s-media-cache-ak0.pinimg.com/236x/57/f0/a2/57f0a2245cb02a9c6b894baba8c04dac.jpg',
+    name: "Yellow Melon Fruit",
+    info: "Yellow Melon Fruits are really melon like and basically a fruit too!",
+    image_url: "http://icongal.com/gallery/image/162177/yellow_melon_fruit_watermelon_melon_food_yellow.png",
     price: 5
   },
   {
-    name: "cold strawberry",
-    info: "if you eat this the umba loopa's will have to take to the juicing room",
-    image_url: 'http://cdn.foodbeast.com.s3.amazonaws.com/content/wp-content/uploads/2012/03/Blue-450x362.jpg',
-    price: 5
-  },
-  {
-    name: "cherry",
-    info: "George Washingtons favorite fruit ha ha",
-    image_url: 'http://asweetlife.org/wp-content/uploads/2010/05/iStock_Cherries.jpg',
+    name: "Star Fruit",
+    info: "Carambola is rich in antioxidants, potassium, and vitamin C; and low in sugar, sodium, and acid.",
+    image_url: "http://www.iconarchive.com/download/i41508/fi3ur/fruitsalad/starfruit.ico",
     price: 5
   }
 ];
