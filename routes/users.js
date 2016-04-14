@@ -4,6 +4,31 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const valid = require('../util/valid');
 const dt = require('../db/tables');
+var passport = require('passport');
+var GoogleStrategy = require('passport-google-oauth20').Strategy;
+
+passport.use(new GoogleStrategy({
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    callbackURL: "http://localhost:3000/auth/google/callback"
+  },
+  function(accessToken, refreshToken, profile, cb) {
+    console.log(profile.id, profile.name);
+    return cb(null, profile);
+  }
+));
+
+passport.serializeUser(function(user, done) {
+  console.log('serialize user', user.emails[0]['value']);
+  done(null, user.emails[0]['value']);
+});
+
+passport.deserializeUser(function(email, done) {
+  // User.findById(id, function(err, user) {
+    done({err: 'err'}, {email: email});
+  // });
+});
+
 
 router.get('/', function(req, res, next) {
   dt.Users()
@@ -50,5 +75,27 @@ router.post('/login', (req, res, next) =>{
       });
   }
 });
+
+router.get('/auth/google',
+  passport.authenticate('google', {
+    scope: ['profile', 'email']
+  }));
+
+router.get('/auth/google/callback',
+  passport.authenticate('google', {
+    failureRedirect: '/login'
+  }),
+  function(req, res) {
+    console.log(req.user);
+    // Successful authentication, redirect home.
+    res.redirect('/profile');
+  });
+
+
+router.get('/logout', function(req, res) {
+  req.session.destroy();
+  res.redirect('/');
+});
+
 
 module.exports = router;
