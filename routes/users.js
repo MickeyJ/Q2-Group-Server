@@ -4,13 +4,13 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const valid = require('../util/valid');
 const dt = require('../db/tables');
-var passport = require('passport');
-var GoogleStrategy = require('passport-google-oauth20').Strategy;
+const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/google/callback"
+    callbackURL: "http://localhost:3000/users/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, cb) {
     console.log(profile.id, profile.name);
@@ -25,6 +25,7 @@ passport.serializeUser(function(user, done) {
 
 passport.deserializeUser(function(email, done) {
   // User.findById(id, function(err, user) {
+    console.log(email);
     done({err: 'err'}, {email: email});
   // });
 });
@@ -76,20 +77,34 @@ router.post('/login', (req, res, next) =>{
   }
 });
 
-router.get('/auth/google',
-  passport.authenticate('google', {
-    scope: ['profile', 'email']
-  }));
+// router.get('/users/auth/google', passport.authenticate('google', {
+//     scope: ['profile']
+//
+//
+//     //res.end();
+// }));
 
-router.get('/auth/google/callback',
-  passport.authenticate('google', {
-    failureRedirect: '/login'
-  }),
-  function(req, res) {
-    console.log(req.user);
-    // Successful authentication, redirect home.
-    res.redirect('/profile');
-  });
+router.get('/auth/google',
+passport.authenticate('google', {
+  scope: ['profile', 'email']
+}, function(err, user){
+  console.log('------------', err, user);
+  // passport.authenticate('google'), function(req, res, next) {
+  //   console.log('auth--------------', req);
+  //   // Successful authentication, redirect home.
+  //   res.json('browse');
+  // }
+}
+));
+
+// router.get('/users/auth/google/callback',
+//   passport.authenticate('google', {
+//
+//   }),
+//   function(req, res) {
+//     res.json(req.user);
+//     // res.redirect('/browse');
+//   });
 
 
 router.get('/logout', function(req, res) {
