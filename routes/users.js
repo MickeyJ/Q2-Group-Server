@@ -21,7 +21,7 @@ router.post('/signup', valid.Signup, (req, res, next) =>{
       name: req.body.name,
       email: req.body.email,
       password: hash
-    }).returning('name')
+    }).returning('user_id')
     .then((response) => {
       res.json(response)
     })
