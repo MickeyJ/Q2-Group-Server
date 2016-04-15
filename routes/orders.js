@@ -34,12 +34,9 @@ router.post('/new', (req, res, next) =>{
     });
 });
 
-router.delete('/:userID/:productID', (req, res, next) =>{
+router.delete('/:orderID', (req, res, next) =>{
   dt.Orders()
-    .where({
-      user_order_id: req.params.userID,
-      product_order_id: req.params.productID
-    })
+    .where({order_id: req.params.orderID})
     .del()
     .then(response =>{
       res.json(response)
